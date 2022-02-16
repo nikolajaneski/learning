@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\User;
+use App\Services\Stripe\Payment;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +18,15 @@ Route::get('/', function() {
     return view('welcome');    
 });
 
+Route::get('/payment', function() {
+    Payment::process();
+});
+
 Route::view('/view', 'test', ['firstName' => 'Nikola', 'lastName' => 'Janeski']);
+
+Route::get('/user/{user}', function(User $user) {
+    return view('profile', ['user' => $user->getAttributes()]);
+})->name('show');
 
 
 Route::redirect('/user', '/');

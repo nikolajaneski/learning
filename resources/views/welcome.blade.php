@@ -7,10 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="/first" method="POST">
+    <form action="{{ route('show', 5) }}" method="GET">
         @csrf
-        @method('DELETE')
-        <input type="submit" name="submit" id="">
+
+        <input type="submit" name="submit" value="edit" id="">
     </form>
 </body>
 </html>
