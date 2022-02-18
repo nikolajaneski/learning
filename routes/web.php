@@ -12,7 +12,27 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function() {
-    return view('welcome');    
+
+Route::view('/', 'welcome');
+
+$data = [
+    "user" => [
+        "firstName" => "James",
+        "lastName" => "Doe",
+        "age" => 23
+    ],
+    "products" => ["banana", "orange"]
+];
+
+Route::get('/test', function() use ($data) {
+    return view('test', $data);    
+});
+
+// Route::get('/test', function() {
+//     return view('test')->with('firstName', 'James');
+// });
+
+Route::get('/user/show', function() {
+    return view('user.show');
 });
 
