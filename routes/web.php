@@ -16,28 +16,3 @@ Route::get('/', function() {
     return view('welcome');    
 });
 
-Route::view('/view', 'test', ['firstName' => 'Nikola', 'lastName' => 'Janeski']);
-
-
-Route::redirect('/user', '/');
-
-// Route::get('/user', function() {
-//     return 'This will get info for the user';    
-// });
-
-// Route::post('/user', function() {
-//     return 'This will insert user';    
-// });
-
-// Route::put('/user', function() {
-//     return 'This will update user';    
-// });
-
-// Route::patch('/user', function() {
-//     return 'This will update user';    
-// });
-
-// Route::delete('/user', function() {
-//     return 'This will delete user';    
-// });
-

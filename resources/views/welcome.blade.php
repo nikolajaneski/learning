@@ -7,10 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="/first" method="POST">
-        @csrf
-        @method('DELETE')
-        <input type="submit" name="submit" id="">
-    </form>
+    Hi
 </body>
 </html>
